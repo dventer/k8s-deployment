@@ -12,3 +12,15 @@ spec:
     defaultRequest:
       memory: 512Mi
     type: Container
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: mem-min-max-demo-lr
+spec:
+  limits:
+  - max:
+      memory: 1Gi
+    min:
+      memory: 500Mi
+    type: Container
